@@ -157,8 +157,9 @@ Ninguna de las cinco skills instaladas conoce `specs/NNN-slug/spec.md`, ni los e
 `borrador → en-revision → aprobada → implementada`, ni `docs/definitions.md`. Aportan
 **rigor de proceso**; no aportan **la forma de nuestra spec**.
 
-Las tres técnicas que de verdad subirían la calidad de las specs de este proyecto están
-en frameworks que no se pueden instalar, y son adaptables a una skill propia:
+Las tres técnicas que de verdad subían la calidad de las specs de este proyecto estaban
+en frameworks que no se pueden instalar, así que se adaptaron a una skill escrita a mano
+el **2026-09-23**:
 
 1. El **barrido de ambigüedad por taxonomía con ≤5 preguntas** de Spec Kit, escribiendo
    las respuestas en *Preguntas abiertas* → *Decisiones*.
@@ -166,4 +167,9 @@ en frameworks que no se pueden instalar, y son adaptables a una skill propia:
 3. El **requisito sin escenario no es requisito** de OpenSpec, en el vocabulario de
    `docs/definitions.md`.
 
-Eso sería una skill de este repositorio, no una descarga.
+Esa skill es `clarificar-spec`, y **no está aquí**: vive en
+`ciberpunk-storymaker/.claude/skills/clarificar-spec/`, porque conoce `specs/NNN-slug/`,
+los estados `borrador → en-revision → aprobada → implementada` y la nomenclatura
+`RF-*`/`CA-*` de ese repositorio. Copiarla a MyFactory crearía dos versiones que
+divergirían. Si algún día sirve para otro proyecto, lo que sube aquí es la parte
+genérica, no una copia.
