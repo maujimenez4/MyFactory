@@ -13,17 +13,41 @@ Regla: cada subinforme se hace en un contexto limpio. En la consolidación solo 
 
 ## 2. Investigación A: optimización de tokens en solución agéntica y generación de código
 
-Estado: [x] Fase 1  [ ] Fase 2  [ ] Fase 3  [ ] Fase 4
+**Es la investigación principal**, y por eso lleva el método completo antes que la B.
 
-Métrica principal: coste por tarea completada con éxito (agente) y coste por historia/PR aceptada (código).
+Estado: [x] Fase 1  [x] Fase 2  [ ] Fase 3  [ ] Fase 4
 
-### Fase 1: opciones exploradas
+Métrica principal: coste por tarea completada con éxito (agente) y coste por historia/PR aceptada (código). No «tokens por llamada»: una estrategia que ahorra tokens y hace fracasar la tarea sale más cara, porque hay que repetirla entera.
+
+### Encuadre del proyecto: tres formatos posibles
 
 - Opción A: diagnóstico rápido con mejoras inmediatas (4 semanas). Recoger datos, detectar gasto excesivo, aplicar 3-5 mejoras rápidas y entregar un informe.
 - Opción B: programa completo con experimentación (10-12 semanas). KPIs, línea base con benchmark de tareas reales, experimentos aislados, implantación con dashboards y guía, y transferencia.
 - Opción C: piloto y escalado (6-8 semanas). Un flujo agéntico y 1-2 equipos, optimización a fondo y playbook replicable.
 
-### Fase 2, 3 y 4
+### Fase 1: estrategias exploradas
+
+22 estrategias en [`investigacion/agentica-tokens/fase1-exploracion.md`](investigacion/agentica-tokens/fase1-exploracion.md), en cinco bloques: arquitectura del contexto, diseño de herramientas, modelo y forma de la llamada, proceso de trabajo y medición.
+
+Cada cifra lleva su nivel de confianza —**oficial** de Anthropic, **paper**, o **divulgación** de un blog comercial—, porque esa diferencia pesa más que el número.
+
+### Fase 2: clasificación
+
+Ranking completo en [`investigacion/agentica-tokens/fase2-clasificacion.md`](investigacion/agentica-tokens/fase2-clasificacion.md), sobre impacto, esfuerzo, riesgo y **evidencia**. En los cuatro, 5 es mejor.
+
+| Grupo | Estrategias |
+|---|---|
+| **Aplicar ya** (17-20) | Prompt caching y el orden del prompt · subagentes con contexto limpio · herramientas que no vuelcan · apagar las que no se usan · salidas estructuradas · búsquedas pequeñas · tareas acotadas · reintento dirigido · medir coste por tarea y tasa de éxito juntos |
+| **Probar en piloto** (15-17) | Recuperación *just-in-time* · Batch API · notas fuera del contexto · techo de gasto con corte · línea base con tareas reales |
+| **Con cuidado** | **Enrutamiento por complejidad** (impacto 5, evidencia 1) · **ejecución de código con MCP** (−98,7 % oficial, pero exige entorno de ejecución) · compactación (es red de seguridad, no ahorro) |
+
+**Tres cosas que el ranking no dice y deciden el plan:**
+
+1. **Las estrategias de contexto se pisan.** Subagentes, compactación, notas y *just-in-time* atacan el mismo gasto: sumar sus porcentajes da un ahorro imposible. Se aplica la mayor y se vuelve a medir.
+2. **Las que sí se suman** son cuatro palancas sobre cuatro factores distintos: caché (precio del token), batch (precio de la llamada), enrutamiento (precio del modelo) y contexto (número de tokens).
+3. **La medición va primera en el tiempo**, aunque no lidere la tabla. Sin línea base con tareas reales del cliente, ningún porcentaje significa nada — y el informe está lleno de porcentajes ajenos que lo demuestran.
+
+### Fase 3 y 4
 
 Pendiente.
 
