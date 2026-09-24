@@ -53,7 +53,33 @@ Pendiente.
 
 ## 3. Investigación B: skills, plugins y estrategias para repositorios de millones de líneas
 
-(Se rellena en la Parte 2.)
+Estado: [x] Fase 1  [x] Fase 2  [ ] Fase 3  [ ] Fase 4
+
+Trabajo en [`investigacion/repos-grandes/`](investigacion/repos-grandes/): 25 candidatos
+explorados en [fase 1](investigacion/repos-grandes/fase1-exploracion.md) y puntuados en
+[fase 2](investigacion/repos-grandes/fase2-clasificacion.md) sobre cinco criterios —ahorro,
+madurez, encaje, riesgo y escala—, donde **5 siempre es mejor, también en riesgo**.
+
+### Resumen del ranking
+
+| Grupo | Candidatos |
+|---|---|
+| **Incorporar ya** (22-25) | Subagentes · `CLAUDE.md` jerárquico · prompt caching y el orden del prompt · skills progresivas · selección de modelo · empezar la sesión en el paquete · exploración por capas · tareas por módulo · ficheros de exclusión · doc de arquitectura para la IA |
+| **Probar en piloto** (18-22) | **Serena** · **ast-grep** · artefactos entre sesiones · Repomix en `--compress` · la idea del repo map de Aider · hooks |
+| **Descartar** | **Claude Context** (manda el código a OpenAI y Zilliz) · Gitingest y code2prompt (no caben en millones de líneas) · mcp-language-server (seis meses parado) · github-mcp-server (ahorra clonar, no contexto) |
+
+Nada de lo de «incorporar ya» se instala: **son configuración y forma de trabajar**. Lo
+que MyFactory aportaría es una skill que las reúna y una plantilla de `CLAUDE.md` para
+repositorios grandes.
+
+**Dos avisos que pesan más que el orden de la tabla:**
+
+1. **Ninguna cifra de ahorro está medida por nosotros.** El ranking se apoya en
+   estimaciones y en lo que afirman las fuentes. La primera tarea de cualquier piloto es
+   una línea base propia.
+2. **Serena, el mejor candidato técnico, es GPL-3.0-or-later.** Su componente SolidLSP es
+   MIT; la aplicación, no. Antes de ofrecerla a un cliente hay que cerrar por escrito qué
+   implica, no suponerlo.
 
 ## 4. Modificaciones futuras (no implementadas)
 
