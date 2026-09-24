@@ -70,7 +70,7 @@ Lo que la consolidación corrigió de la fase 2:
 
 ## 3. Investigación B: skills, plugins y estrategias para repositorios de millones de líneas
 
-Estado: [x] Fase 1  [x] Fase 2  [ ] Fase 3  [ ] Fase 4
+Estado: [x] Fase 1  [x] Fase 2  [x] Fase 3  [x] Fase 4 — **completada**
 
 Trabajo en [`investigacion/repos-grandes/`](investigacion/repos-grandes/): 25 candidatos
 explorados en [fase 1](investigacion/repos-grandes/fase1-exploracion.md) y puntuados en
@@ -88,6 +88,24 @@ madurez, encaje, riesgo y escala—, donde **5 siempre es mejor, también en rie
 Nada de lo de «incorporar ya» se instala: **son configuración y forma de trabajar**. Lo
 que MyFactory aportaría es una skill que las reúna y una plantilla de `CLAUDE.md` para
 repositorios grandes.
+
+### Fase 3: cuatro subinformes
+
+- [Serena](investigacion/repos-grandes/fase3-serena.md) — el mejor candidato técnico, con la licencia resuelta y un fallo de seguridad que condiciona su uso.
+- [ast-grep](investigacion/repos-grandes/fase3-ast-grep.md) — qué aporta, y qué no, frente al `Grep` que ya existe.
+- [Skill `repo-grande`](investigacion/repos-grandes/fase3-skill-practicas.md) — diseño de la skill que reúne las prácticas. No creada.
+- [Repomix](investigacion/repos-grandes/fase3-repomix.md) — el candidato que pierde contra dejar explorar al agente.
+
+### Fase 4: informe final
+
+**[`fase4-informe-final.md`](investigacion/repos-grandes/fase4-informe-final.md)**, consolidado leyendo solo los subinformes.
+
+1. **Ninguna de las tres herramientas tiene cifra de ahorro publicada y creíble.** De ast-grep frente al `Grep` nativo no existe ninguna, ni oficial ni en paper.
+2. **Serena es la única que cambia la naturaleza del trabajo:** responde «quién llama a esto» en una llamada.
+3. **Y trae el hallazgo más serio:** ejecución de código al **abrir** un repositorio malicioso, antes de cualquier interacción (≤1.6.1, corregido en 1.7.0).
+4. **Su licencia queda resuelta:** la GPL **no toca el código del cliente** — regula la distribución, no el uso. Solo obliga si la redistribuimos, forkeamos o le escribimos un plugin.
+5. **Repomix pierde** contra dejar que el agente explore solo, salvo con salida a fichero consultada con `Grep`.
+6. **La pieza que más rinde no es una herramienta:** es la skill `repo-grande`, que no se instala y no tiene licencia que negociar.
 
 **Dos avisos que pesan más que el orden de la tabla:**
 
@@ -112,6 +130,12 @@ repositorios grandes.
 | Generador de envoltorios MCP→código | Ahorro grande, pero es infraestructura y no hay medición propia | **Descartada por ahora** |
 | Pasarela de enrutamiento de modelos | Misma razón, y además rompe la caché | **Descartada por ahora** |
 | Nota en cada skill que lanza subagentes | Una skill copiada hereda el modelo de subagente del proyecto destino: es parte de su contrato | Propuesta |
+| Skill `repo-grande` con sus tres ficheros de apoyo | La pieza de mayor rendimiento de la investigación B: no se instala, no tiene licencia ni binario | **Recomendada** (informe final B) |
+| Skill de uso de Serena, escrita desde cero | Cuándo preferir `find_symbol` a `Read`, y recordarlo tras compactar. Propia, no hereda la GPL | **Recomendada** (informe final B) |
+| `tools/serena/` con su configuración de referencia | Servidor MCP evaluado. Exige GPL marcada como no permisiva y versión mínima 1.7.0 | Propuesta, tras permiso escrito del cliente |
+| `tools/ast-grep/` | Binario evaluado, no instalado por defecto. Solo para búsqueda estructural | Propuesta |
+| `tools/repomix/` acotado | Solo `--compress` con `--include` y salida a fichero; nunca al contexto | **Descartada salvo piloto** |
+| Verificar en el código si Serena tiene telemetría | No se encontró documentación: ausencia de evidencia, no evidencia de ausencia | **Pendiente, bloquea su uso con cliente** |
 
 ## 5. Registro de cambios y cómo revertir
 
@@ -120,6 +144,7 @@ repositorios grandes.
 | v0.1 | 2026-09-24 | Método e Investigación A fase 1 | `4a606ed` |
 | v0.2 | 2026-09-24 | Investigación A fases 1 y 2, e Investigación B fases 1 y 2 | `7e8eec2`, `a15586b` |
 | v0.3 | 2026-09-24 | Investigación A completa: tres subinformes e informe final | `1fc3177`, `9900df9` |
+| v0.4 | 2026-09-24 | Investigación B completa: cuatro subinformes e informe final | *(pendiente de hash)* |
 
 Para revertir:
 
