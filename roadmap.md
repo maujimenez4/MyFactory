@@ -144,7 +144,7 @@ repositorios grandes.
 | v0.1 | 2026-09-24 | Método e Investigación A fase 1 | `4a606ed` |
 | v0.2 | 2026-09-24 | Investigación A fases 1 y 2, e Investigación B fases 1 y 2 | `7e8eec2`, `a15586b` |
 | v0.3 | 2026-09-24 | Investigación A completa: tres subinformes e informe final | `1fc3177`, `9900df9` |
-| v0.4 | 2026-09-24 | Investigación B completa: cuatro subinformes e informe final | *(pendiente de hash)* |
+| v0.4 | 2026-09-24 | Investigación B completa: cuatro subinformes e informe final | `90f5984`, `a07cfbc` |
 
 Para revertir:
 
