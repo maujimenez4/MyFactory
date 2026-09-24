@@ -44,7 +44,7 @@ Pendiente.
 
 | Versión | Fecha | Cambio | Commit |
 |---|---|---|---|
-| v0.1 | [FECHA] | Método e Investigación A fase 1 | [HASH] |
+| v0.1 | 2026-09-24 | Método e Investigación A fase 1 | `4a606ed` |
 
 Para revertir:
 
